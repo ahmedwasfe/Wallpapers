@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundcolor">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_settings_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="?android:selectableItemBackground"
+        android:clickable="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="20dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linear_settings_text"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="?attr/backgroundcolor"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_settings"
+                android:textColor="?attr/textcolor"
+                android:textSize="30dp" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_settings_text"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_clear_favorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp"
+                        android:text="@string/clear_favorite" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:buttonTint="?attr/tintcolor"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_clear_favorite"
+                        android:textColor="?attr/textcolor" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_clear_recents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp"
+                        android:text="@string/clear_recent" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:buttonTint="?attr/tintcolor"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_clear_all"
+                        android:textColor="?attr/textcolor" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_app_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp"
+                        android:text="@string/app_style" />
+
+                    <Switch
+                        android:id="@+id/switch_style_app"
+                        android:layout_width="wrap_content"
+                        android:layout_height="?attr/actionBarSize"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:buttonTint="@color/colorBlackDark3"
+                        android:padding="10dp"
+                        android:trackTint="@color/colorBlackDark3" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_app_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp"
+                        android:text="@string/share" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:buttonTint="?attr/tintcolor"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_share_app"
+                        android:textColor="?attr/textcolor" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_app_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp"
+                        android:text="@string/help" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:buttonTint="?attr/tintcolor"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_help"
+                        android:textColor="?attr/textcolor" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="?attr/cardbackgroundcolor"
+                android:clickable="true"
+                android:padding="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/linear_help_app"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/help_info1"
+                        android:textColor="?attr/textcolor"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/help_info2"
+                        android:textColor="?attr/textcolor"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:id="@+id/text_send_suggestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:text="ahmedwasfe84@gmail.com"
+                        android:textColor="#00f"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_app_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="?android:selectableItemBackground"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="10dp"
+                        android:text="@string/about_app" />
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="20dp"
+                        android:buttonTint="?attr/tintcolor"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_about_app"
+                        android:textColor="?attr/textcolor" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/linear_about_app"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/app_name"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:fontFamily="cursive"
+                    android:textColor="?attr/textcolor"/>
+
+                <TextView
+                    android:id="@+id/text_app_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="App Version : 1.0"
+                    android:textColor="?attr/textcolor"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

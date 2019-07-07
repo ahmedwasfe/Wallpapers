@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Wallpapers</string>
+
+
+    <string name="title_activity_home">الرئيسية</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">ahmet w mandil</string>
+    <string name="nav_header_subtitle">ahmedwasfe84@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">الإعدادات</string>
+
+    <string name="not_signed_in">يجب تسجيل الدخول أولاً...</string>
+    <string name="not_internet_connection">الرجاء التأكد من اتصالك بالانترنت والمحاولة مرة أخرى...</string>
+    <string name="favorite_empty">قائمة المفضلات فارغة...</string>
+    <string name="recents_empty">قائمة المضافة مؤخراً فارغة...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">238176580369312</string>
+    <string name="facebook_login_protocol_schema">fb238176580369312</string>
+
+    <string name="browser">تصفح...</string>
+    <string name="upload">رفع</string>
+
+    <string name="log_out">تسجيل الخروج</string>
+
+
+    <string name="category">التصنيفات</string>
+    <string name="recents">مؤخراً</string>
+    <string name="trending">الشائعة</string>
+
+    <string name="internet_connection">تم الإتصال بالإنترنت</string>
+    <string name="no_internet_connection">لا يوجد إتصال بالإنترنت</string>
+
+    <string name="welcome_user">مرحبا</string>
+    <string name="Choose_category">الرجاء إختيار الصنف</string>
+    <string name="success_uploaded">تم الرفع بنجاح</string>
+    <string name="please_wait">الرجاء الإنتظار....</string>
+    <string name="share_successfull">تمت المشاركة بنجاح</string>
+    <string name="share_cancelled">تم إلغاء المشاركة</string>
+    <string name="accept_permission">يحتاج التطبيق إذن لتنزيل الصورة</string>
+    <string name="set_wallpaper">تم تعيين الخلفية لهاتفك</string>
+    <string name="download_success">تم تنزيل الصورة</string>
+
+    <string name="share">مشاركة</string>
+    <string name="share_facebook">مشاركة على فيسبوك</string>
+    <string name="set_wallpaper2">تعيين خلفية</string>
+    <string name="download">تنزيل</string>
+    <string name="night_mode">الوضع الليلي</string>
+    <string name="favorite">المفضلة</string>
+    <string name="app_style">لون التطبيق</string>
+    <string name="help">مساعدة</string>
+    <string name="share_app">مشاركة التطبيق</string>
+    <string name="about_app">عن التطبيق</string>
+    <string name="clear_recent">مسح المضافة مؤخراً</string>
+    <string name="clear_favorite">حذف المفضلات</string>
+
+    <string name="help_info1">يمكن مشاركة الصور في حال توفر الإتصال بالإنترنت</string>
+    <string name="help_info2">يكنك التواصل للإقتراحات و الدعم عبر الإيميل التالي</string>
+
+    <string name="messageWlecome">مرحبا بك في تطبيق الخلفيات</string>
+    <string name="messageHelp">كيف يمكنني مساعدتك أكتب إقتراحك هنا وشكرا</string>
+    <string name="try_again">حاول مرة أخرى</string>
+
+</resources>

@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.ahmet.iphonewallpaper"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+
+    // Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.google.firebase:firebase-auth:16.0.1'
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
+    implementation 'com.firebaseui:firebase-ui-database:3.3.1'
+    implementation 'com.firebaseui:firebase-ui-auth:3.3.1'
+
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+    implementation 'com.google.firebase:firebase-ads:15.0.1'
+
+
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.ogaclejapan.smarttablayout:library:1.7.0@aar'
+    implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.7.0@aar'
+
+    // Show Image
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.okhttp:okhttp:2.5.0'
+    implementation 'com.flaviofaria:kenburnsview:1.0.7'
+
+    //
+    //implementation 'com.sdsmdg.harjot:vectormaster:1.1.2'
+    implementation 'com.github.chrisbanes:PhotoView:2.1.0'
+    implementation 'com.ss.bannerslider:bannerslider:2.0.0'
+    implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
+
+
+    // permission and Dialog
+    implementation 'com.karumi:dexter:5.0.0'
+    implementation 'com.github.d-max:spots-dialog:0.7@aar'
+
+    // Floating Action Button
+    implementation 'com.github.clans:fab:1.6.4'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // room DB
+    implementation 'android.arch.persistence.room:runtime:1.1.0-alpha2'
+    implementation 'android.arch.persistence.room:rxjava2:1.1.0-alpha2'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.0-alpha2'
+
+    // RXJAVA
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // Facebook
+    implementation 'com.facebook.android:facebook-share:4.31.0'
+
+   // implementation 'com.github.hani-momanii:SuperNova-Emoji:1.0'
+
+    //Material Spinner
+    implementation 'com.jaredrummler:material-spinner:1.2.4'
+
+    implementation 'com.github.arturogutierrez:badges:1.0.5@aar'
+}
+
+
+
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    tools:context=".Fragments.TrendingFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_trending"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/linear_trending_disconecction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="58dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="@string/no_internet_connection"
+            android:textAlignment="center"
+            android:textColor="?attr/textcolor"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40sp"
+            android:fontFamily="casual"
+            android:text="@string/not_internet_connection"
+            android:textAlignment="center"
+            android:textColor="?attr/textcolor"
+            android:textSize="15sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:src="@drawable/icon_oops_mismatch_pw_2x" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

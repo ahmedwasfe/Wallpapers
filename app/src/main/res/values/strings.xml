@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Wallpapers</string>
 
-    <string name="unit_id" translatable="false">ca-app-pub-4765070079723849/6128940602</string>
+    <string name="unit_id" translatable="false">ca-app-pub-4765070079723849/1665386996</string>
+    <string name="unit_id2" translatable="false">ca-app-pub-4765070079723849/6407373942</string>
 
     <string name="title_activity_home">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -28,7 +29,7 @@
     <string name="log_out">Log Out</string>
 
 
-    <string name="category">Category</string>
+    <string name="categores">Categores</string>
     <string name="recents">Recently</string>
     <string name="trending">Trending</string>
 

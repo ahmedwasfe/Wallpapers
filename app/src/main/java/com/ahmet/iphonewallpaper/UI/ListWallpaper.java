@@ -2,18 +2,16 @@ package com.ahmet.iphonewallpaper.UI;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.PersistableBundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -43,8 +41,6 @@ import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class ListWallpaper extends AppCompatActivity{
 
@@ -84,7 +80,7 @@ public class ListWallpaper extends AppCompatActivity{
         PublisherAdView adView = new PublisherAdView(this);
         adView.setAdSizes(AdSize.BANNER);
 
-        adView.setAdUnitId("ca-app-pub-4765070079723849/6128940602");
+        adView.setAdUnitId("ca-app-pub-4765070079723849/6407373942");
 
         mPublisherAdView = findViewById(R.id.publisherAdView);
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
@@ -92,12 +88,12 @@ public class ListWallpaper extends AppCompatActivity{
                 .build();
         mPublisherAdView.loadAd(adRequest);
 
-        connection = new CheckInternetConnection(this);
-        if (connection.isConnectInternet()){
-            mPublisherAdView.setVisibility(View.VISIBLE);
-        }else {
-            mPublisherAdView.setVisibility(View.GONE);
-        }
+//        connection = new CheckInternetConnection(this);
+//        if (connection.isConnectInternet()){
+//            mPublisherAdView.setVisibility(View.VISIBLE);
+//        }else {
+//            mPublisherAdView.setVisibility(View.GONE);
+//        }
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);

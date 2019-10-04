@@ -1,7 +1,7 @@
 package com.ahmet.iphonewallpaper.ViewHolder;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.ahmet.iphonewallpaper.Config.CheckInternetConnection;
 import com.ahmet.iphonewallpaper.Interface.ItemClickListener;
 import com.ahmet.iphonewallpaper.R;
-import com.squareup.picasso.Picasso;
 
 public class CategoryHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 

@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.provider.MediaStore;
 
-import android.support.design.widget.Snackbar;
 import android.widget.Toast;
 
 import com.ahmet.iphonewallpaper.R;

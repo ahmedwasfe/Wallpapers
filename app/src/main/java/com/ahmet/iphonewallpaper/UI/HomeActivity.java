@@ -11,29 +11,25 @@ import android.net.Uri;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import androidx.annotation.NonNull;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.View;
-import android.widget.Toast;
 
 import com.ahmet.iphonewallpaper.Adapter.FragmentsAdapter;
-import com.ahmet.iphonewallpaper.Adapter.RecentsAdapter;
 import com.ahmet.iphonewallpaper.Config.CheckInternetConnection;
 import com.ahmet.iphonewallpaper.Config.Common;
 import com.ahmet.iphonewallpaper.Config.SaveSettings;
 import com.ahmet.iphonewallpaper.Fragments.CategoryFragment;
 import com.ahmet.iphonewallpaper.Fragments.RecentsFragment;
-import com.ahmet.iphonewallpaper.Fragments.AccountFragment;
 import com.ahmet.iphonewallpaper.Fragments.SettingsFragment;
 import com.ahmet.iphonewallpaper.Fragments.TrendingFragment;
 import com.ahmet.iphonewallpaper.Fragments.FavoriteFragment;
@@ -42,7 +38,6 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 
 import com.google.firebase.database.DataSnapshot;
@@ -92,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
         PublisherAdView adView = new PublisherAdView(this);
         adView.setAdSizes(AdSize.BANNER);
 
-        adView.setAdUnitId("ca-app-pub-4765070079723849/6128940602");
+        adView.setAdUnitId("ca-app-pub-4765070079723849/1665386996");
 
         mPublisherAdView = findViewById(R.id.publisherAdView);
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder()
@@ -123,11 +118,11 @@ public class HomeActivity extends AppCompatActivity {
 
         FragmentsAdapter fragmentsAdapter = new FragmentsAdapter(getSupportFragmentManager());
 
-        fragmentsAdapter.addFragment(new CategoryFragment(), "Category");
-        fragmentsAdapter.addFragment(new RecentsFragment(), "Recents");
-        fragmentsAdapter.addFragment(new TrendingFragment(), "Trending");
-        fragmentsAdapter.addFragment(new FavoriteFragment(), "Favorite");
-        fragmentsAdapter.addFragment(new SettingsFragment(), "Settings");
+        fragmentsAdapter.addFragment(new CategoryFragment(), getString(R.string.categores));
+        fragmentsAdapter.addFragment(new RecentsFragment(), getString(R.string.recents));
+        fragmentsAdapter.addFragment(new TrendingFragment(), getString(R.string.trending));
+        fragmentsAdapter.addFragment(new FavoriteFragment(), getString(R.string.favorite));
+        fragmentsAdapter.addFragment(new SettingsFragment(), getString(R.string.action_settings));
 
 
         mViewPager.setAdapter(fragmentsAdapter);
@@ -136,7 +131,7 @@ public class HomeActivity extends AppCompatActivity {
         mTabLayout.setViewPager(mViewPager);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            mTabLayout.getTabAt(0).setTooltipText(getString(R.string.category));
+            mTabLayout.getTabAt(0).setTooltipText(getString(R.string.categores));
             mTabLayout.getTabAt(1).setTooltipText(getString(R.string.recents));
             mTabLayout.getTabAt(2).setTooltipText(getString(R.string.trending));
             mTabLayout.getTabAt(3).setTooltipText(getString(R.string.favorite));

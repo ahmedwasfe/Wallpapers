@@ -10,11 +10,11 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -42,6 +42,9 @@ import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareDialog;
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -95,7 +98,7 @@ public class ViewWallpaper extends AppCompatActivity {
     CompositeDisposable compositeDisposable;
     RecentRepository recentRepository;
 
-
+    private InterstitialAd mInterstitialAd;
 
     private DatabaseReference mFirebaseDatabase;
 
@@ -123,6 +126,15 @@ public class ViewWallpaper extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_wallpaper);
+
+        MobileAds.initialize(this, "ca-app-pub-4765070079723849~5007430629");
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-4765070079723849/6020361134");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        if (mInterstitialAd.isLoaded())
+            mInterstitialAd.show();
+        else
+            Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
 
         // Init Check Internet
         connection = new CheckInternetConnection(this);
@@ -203,6 +215,11 @@ public class ViewWallpaper extends AppCompatActivity {
                 Picasso.with(getApplicationContext())
                         .load(Common.wallpaperSelected.getImageUrl())
                         .into(target);
+
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
+                else
+                    Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
             }
         });
 
@@ -216,6 +233,11 @@ public class ViewWallpaper extends AppCompatActivity {
                 startActivity(shareIntent);
 
                 //shareImage(Common.wallpaperSelected.getImageUrl());
+
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
+                else
+                    Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
             }
         });
 
@@ -237,13 +259,18 @@ public class ViewWallpaper extends AppCompatActivity {
 //                }else{
 
                     String fileName = UUID.randomUUID().toString() + ".png";
-                    Picasso.with(getBaseContext())
+                    Picasso.with(ViewWallpaper.this)
                             .load(Common.wallpaperSelected.getImageUrl())
-                            .into(new SaveImageHelper(getBaseContext(),
+                            .into(new SaveImageHelper(ViewWallpaper.this,
                                     dialog,
                                     getApplicationContext().getContentResolver(),
                                     fileName, "AHMET ViewWallpapers Image"));
                // }
+
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
+                else
+                    Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
             }
         });
 
@@ -274,6 +301,11 @@ public class ViewWallpaper extends AppCompatActivity {
                         .load(Common.wallpaperSelected.getImageUrl())
                         .into(fbConvertBitmab);
 
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
+                else
+                    Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
+
             }
         });
 
@@ -295,6 +327,10 @@ public class ViewWallpaper extends AppCompatActivity {
             }
         });
 
+        if (mInterstitialAd.isLoaded())
+            mInterstitialAd.show();
+        else
+            Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
 
     }
 

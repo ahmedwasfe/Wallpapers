@@ -4,41 +4,35 @@ import android.app.AlertDialog;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.drm.DrmStore;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.ahmet.iphonewallpaper.Config.Common;
 import com.ahmet.iphonewallpaper.Database.SqliteDatabase.FavoriteDatabaseSQLite;
 import com.ahmet.iphonewallpaper.Model.WallpaperItem;
 import com.ahmet.iphonewallpaper.R;
-import com.ahmet.iphonewallpaper.UI.ViewWallpaper;
 import com.ahmet.iphonewallpaper.UI.ViewWallpapersFavorite;
 import com.ahmet.iphonewallpaper.ViewHolder.FavoriteHolder;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URI;
 import java.util.List;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 import dmax.dialog.SpotsDialog;
 
@@ -49,6 +43,8 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
     private LayoutInflater layoutInflater;
 
     private AlertDialog alertDialog;
+
+    private InterstitialAd mInterstitialAd;
 
     public FavoriteAdapter() {
     }
@@ -72,6 +68,13 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
     @Override
     public void onBindViewHolder(@NonNull final FavoriteHolder favoriteHolder, final int position) {
 
+
+        MobileAds.initialize(mContext, "ca-app-pub-4765070079723849~5007430629");
+        mInterstitialAd = new InterstitialAd(mContext);
+        mInterstitialAd.setAdUnitId("ca-app-pub-4765070079723849/1271431483");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+
         final WallpaperItem wallpaperItem = mListFavorite.get(position);
         final FavoriteDatabaseSQLite databaseFavoritr = new FavoriteDatabaseSQLite(mContext);
         alertDialog = new SpotsDialog(mContext);
@@ -88,6 +91,11 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
                 Intent intent = new Intent(mContext, ViewWallpapersFavorite.class);
                 intent.putExtra("image", wallpaperItem.getImageUrl());
                 mContext.startActivity(intent);
+
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
+                else
+                    Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
             }
         });
 
@@ -119,6 +127,11 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
 
                 //shareImage(wallpaperItem.getImageUrl());
 
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
+                else
+                    Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
+
             }
         });
 
@@ -130,6 +143,11 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteHolder> {
                 Picasso.with(mContext)
                         .load(wallpaperItem.getImageUrl())
                         .into(target);
+
+                if (mInterstitialAd.isLoaded())
+                    mInterstitialAd.show();
+                else
+                    Log.d("InterstitialAd", "The interstitial wasn't loaded yet.");
 
             }
         });

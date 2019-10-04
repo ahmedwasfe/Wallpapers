@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +21,7 @@
             </ss.com.bannerslider.Slider>
 
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_category"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -29,7 +29,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/slider"></android.support.v7.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@+id/slider"></androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:id="@+id/linear_category_disconecction"
@@ -72,6 +72,7 @@
             android:src="@drawable/icon_oops_mismatch_pw_2x" />
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/text_try_again"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,4 +85,4 @@
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
